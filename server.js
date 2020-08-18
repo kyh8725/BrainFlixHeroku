@@ -18,7 +18,7 @@ if (process.env.NODE_ENV === "production") {
 const whitelist = [
   "http://localhost:3000",
   "http://localhost:8000",
-  "https://brainflixdep.herokuapp.com/",
+  "https://brainflixheroku.herokuapp.com/",
 ];
 const corsOptions = {
   origin: function (origin, callback) {
