@@ -1,8 +1,8 @@
 const fs = require("fs");
-const uuid = require("uuid/v4");
+const { v4: uuidv4 } = require("uuid");
 
 function writeJSONFile(filename, content) {
-  fs.writeFileSync(filename, JSON.stringify(content), "utf8", err => {
+  fs.writeFileSync(filename, JSON.stringify(content), "utf8", (err) => {
     if (err) {
       console.log(err);
     }
@@ -11,10 +11,10 @@ function writeJSONFile(filename, content) {
 }
 
 const getNewId = () => {
-  return uuid();
+  return uuidv4();
 };
 
 module.exports = {
   writeJSONFile,
-  getNewId
+  getNewId,
 };
