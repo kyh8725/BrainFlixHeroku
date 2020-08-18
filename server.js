@@ -38,6 +38,6 @@ const videoRoute = require("./routes/api/videos");
 app.use("/", videoRoute);
 
 const port = 8000;
-app.listen(port, () => {
+app.listen(process.env.PORT || port, () => {
   console.log(`server is running on port ${port}`);
 });
