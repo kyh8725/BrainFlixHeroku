@@ -1,9 +1,9 @@
+const videoRoute = require("./routes/api/videos");
 const express = require("express");
 const app = express();
 const cors = require("cors");
 app.use(cors());
 app.use(express.json());
-const videoRoute = require("./routes/api/videos");
 
 const path = require("path");
 if (process.env.NODE_ENV === "production") {
