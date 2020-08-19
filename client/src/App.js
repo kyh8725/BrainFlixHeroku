@@ -23,7 +23,7 @@ class App extends Component {
   };
 
   componentDidMount() {
-    console.log("componentdidmount app");
+    console.log("componentdidmount app", this.state.mainVideo);
     this.getVideoList();
     this.getMainVideo();
   }
@@ -38,8 +38,17 @@ class App extends Component {
     axios
       .get("https://brainflixheroku.herokuapp.com/videos")
       .then((response) => {
-        this.setState({ videoList: response.data });
+        this.setState(
+          { videoList: response.data },
+          console.log("url", response.data)
+        );
       });
+    axios.get("/videos").then((response) => {
+      this.setState(
+        { videoList: response.data },
+        console.log("/videos", response.data)
+      );
+    });
   };
 
   getMainVideo = () => {
