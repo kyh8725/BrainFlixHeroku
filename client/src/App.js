@@ -34,7 +34,7 @@ class App extends Component {
   }
 
   getVideoList = () => {
-    axios.get("/videos/").then((response) => {
+    axios.get("/videos").then((response) => {
       this.setState({ videoList: response.data });
     });
   };
