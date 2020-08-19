@@ -14,25 +14,25 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-// ** MIDDLEWARE ** //
-const whitelist = [
-  "http://localhost:3000",
-  "http://localhost:8000",
-  "https://brainflixheroku.herokuapp.com/",
-];
-const corsOptions = {
-  origin: function (origin, callback) {
-    console.log("** Origin of request " + origin);
-    if (whitelist.indexOf(origin) !== -1 || !origin) {
-      console.log("Origin acceptable");
-      callback(null, true);
-    } else {
-      console.log("Origin rejected");
-      callback(new Error("Not allowed by CORS"));
-    }
-  },
-};
-app.use(cors(corsOptions));
+// //** MIDDLEWARE ** //
+// const whitelist = [
+//   "http://localhost:3000",
+//   "http://localhost:8000",
+//   "https://brainflixheroku.herokuapp.com/",
+// ];
+// const corsOptions = {
+//   origin: function (origin, callback) {
+//     console.log("** Origin of request " + origin);
+//     if (whitelist.indexOf(origin) !== -1 || !origin) {
+//       console.log("Origin acceptable");
+//       callback(null, true);
+//     } else {
+//       console.log("Origin rejected");
+//       callback(new Error("Not allowed by CORS"));
+//     }
+//   },
+// };
+// app.use(cors(corsOptions));
 
 const videoRoute = require("./routes/api/videos");
 app.use("/", videoRoute);
