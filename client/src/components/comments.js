@@ -7,9 +7,7 @@ import axios from "axios";
 export default function comments(props) {
   const deleteHandler = (event) => {
     axios
-      .delete(
-        `https://brainflixheroku.herokuapp.com/comments/${props.mainVideoId}/${event.target.id}`
-      )
+      .delete(`/comments/${props.mainVideoId}/${event.target.id}`)
       .then((response) => {
         props.getMainVideo();
       });
