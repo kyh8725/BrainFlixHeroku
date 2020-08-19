@@ -11,7 +11,11 @@ export default function videoList(props) {
             key={video.id}
             className="video-list__single-img"
           >
-            <img src={video.image} alt={video.title} />
+            <img
+              src={video.image}
+              alt={video.title}
+              onClick={() => props.setMainVideoId(video.id)}
+            />
           </Link>
           <div className="video-list__single-info">
             <p className="video-list__single-info-title">{video.title}</p>

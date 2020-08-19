@@ -23,7 +23,6 @@ class App extends Component {
   };
 
   componentDidMount() {
-    console.log("componentdidmount app", this.state.mainVideo);
     this.getVideoList();
     this.getMainVideo();
   }
@@ -36,10 +35,7 @@ class App extends Component {
 
   getVideoList = () => {
     axios.get("/videos").then((response) => {
-      this.setState(
-        { videoList: response.data },
-        console.log("videos", response.data)
-      );
+      this.setState({ videoList: response.data });
     });
   };
 
@@ -56,6 +52,11 @@ class App extends Component {
     axios.put(`/videos/${this.state.mainVideoId}/likes`).then((response) => {
       this.getMainVideo();
     });
+  };
+
+  setMainVideoId = (videoId) => {
+    this.setState({ mainVideoId: videoId }, this.getMainVideo());
+    this.getVideoList();
   };
 
   render() {
@@ -78,10 +79,7 @@ class App extends Component {
           />
           <Route
             path="/:id"
-            render={(props) => {
-              if (props.match.params.id !== this.state.mainVideoId) {
-                this.setState({ mainVideoId: props.match.params.id });
-              }
+            render={() => {
               return (
                 <main>
                   <div className="mainVideo-container">
@@ -108,6 +106,7 @@ class App extends Component {
                     </div>
                     <div className="desktop-view__right">
                       <VideoList
+                        setMainVideoId={this.setMainVideoId}
                         videoList={this.state.videoList}
                         mainVideoId={this.state.mainVideoId}
                       />
@@ -121,9 +120,6 @@ class App extends Component {
             path="/"
             exact
             render={() => {
-              if ($homeKey !== this.state.mainVideoId) {
-                this.setState({ mainVideoId: $homeKey });
-              }
               return (
                 <main>
                   <div className="mainVideo-container">
@@ -150,6 +146,7 @@ class App extends Component {
                     </div>
                     <div className="desktop-view__right">
                       <VideoList
+                        setMainVideoId={this.setMainVideoId}
                         videoList={this.state.videoList}
                         mainVideoId={this.state.mainVideoId}
                       />

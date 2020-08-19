@@ -1,4 +1,3 @@
-const videoRoute = require("./routes/api/videos");
 const express = require("express");
 const app = express();
 const cors = require("cors");
@@ -13,6 +12,7 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
+const videoRoute = require("./routes/api/videos");
 app.use("/", videoRoute);
 
 const port = process.env.PORT || 5000;

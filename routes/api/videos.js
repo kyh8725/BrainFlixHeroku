@@ -2,6 +2,8 @@ const express = require("express");
 const helper = require("../../helper/helper");
 const router = express.Router();
 const videoFile = __dirname + "/../../models/mainVideo.json";
+const VideoListFile = __dirname + "/../../models/videoList.json";
+const videoList = require(VideoListFile);
 const videos = require(videoFile);
 
 router.get("/videos", (req, res) => {
@@ -17,8 +19,9 @@ router.get("/videos", (req, res) => {
 });
 
 router.post("/videos", (req, res) => {
+  let newId = helper.getNewId();
   const newVideo = {
-    id: helper.getNewId(),
+    id: newId,
     title: req.body.title,
     channel: "Dainel Kim",
     image: req.body.image,
@@ -31,6 +34,12 @@ router.post("/videos", (req, res) => {
     video: "https://project-2-api.herokuapp.com/stream",
     comments: [],
   };
+  const newVideoList = {
+    id: newId,
+    title: req.body.title,
+    channel: "Daniel Kim",
+    image: req.body.image,
+  };
 
   if (!newVideo.title || !newVideo.description) {
     return res.status(400).json({
@@ -38,7 +47,9 @@ router.post("/videos", (req, res) => {
     });
   }
   videos.push(newVideo);
+  videoList.push(newVideoList);
   helper.writeJSONFile(videoFile, videos);
+  helper.writeJSONFile(VideoListFile, videoList);
   res.json(videos);
 });
 
