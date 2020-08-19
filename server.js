@@ -3,7 +3,7 @@ const app = express();
 const cors = require("cors");
 app.use(cors());
 app.use(express.json());
-app.use(express.static("public"));
+app.use(express.static("client/public"));
 const videoRoute = require("./routes/api/videos");
 app.use("/", videoRoute);
 
@@ -38,6 +38,6 @@ if (process.env.NODE_ENV === "production") {
 // app.use(cors(corsOptions));
 
 const port = 8000;
-app.listen(process.env.PORT || port, () => {
+app.listen(port, () => {
   console.log(`server is running on port ${port}`);
 });
