@@ -41,7 +41,7 @@ const proxy = require("http-proxy-middleware");
 
 module.exports = function (app) {
   // add other server routes to path array
-  app.use(proxy(["/"], { target: "http://localhost:8000" }));
+  app.use(proxy(["/routes/api/videos"], { target: "http://localhost:8000" }));
 };
 
 const port = 8000;
