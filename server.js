@@ -4,6 +4,9 @@ const cors = require("cors");
 app.use(cors());
 app.use(express.json());
 
+app.use(express.static("public"));
+app.use(express.static("files"));
+
 const path = require("path");
 if (process.env.NODE_ENV === "production") {
   // Serve any static files
