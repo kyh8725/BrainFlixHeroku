@@ -1,6 +1,5 @@
 {
-  "name": "brainflixheroku",
-  "proxy": "http://localhost:8000",
+  "name": "hero",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

@@ -1,14 +1,14 @@
 import React from "react";
-import uuid from "uuid/v1";
+import { v1 as uuidv1 } from "uuid";
 import formatDate from "./utils";
 import faceImage from "../assets/Images/face.png";
 import axios from "axios";
 
 export default function comments(props) {
-  const deleteHandler = event => {
+  const deleteHandler = (event) => {
     axios
       .delete(`/comments/${props.mainVideoId}/${event.target.id}`)
-      .then(response => {
+      .then((response) => {
         props.getMainVideo();
       });
   };
@@ -16,9 +16,9 @@ export default function comments(props) {
   const commentList = props.comments
     .slice(0)
     .reverse()
-    .map(com => {
+    .map((com) => {
       return (
-        <div key={uuid()} className="comment">
+        <div key={uuidv1()} className="comment">
           <div className="comment__left">
             <img src={faceImage} alt="user-face" />
           </div>

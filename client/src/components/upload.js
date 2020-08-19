@@ -1,5 +1,5 @@
 import React from "react";
-import uuid from "uuid/v1";
+import { v4 as uuidv4 } from "uuid";
 import axios from "axios";
 import uploadImage from "../assets/Images/Upload-video-preview.jpg";
 
@@ -44,7 +44,7 @@ export default function upload(props) {
           </div>
         </div>
         <div className="upload__video">
-          <form id={uuid()} onSubmit={uploadHandler}>
+          <form id={uuidv4()} onSubmit={uploadHandler}>
             <p className="upload__video-title">TITLE YOUR VIDEO</p>
             <input
               className="upload__video-title-input"
