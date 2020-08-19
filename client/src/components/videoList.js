@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 export default function videoList(props) {
-  const videoList = props.videoList.map(video => {
+  const videoList = props.videoList.map((video) => {
     if (video.id !== props.mainVideoId) {
       return (
         <div key={video.id} className="video-list__single">
