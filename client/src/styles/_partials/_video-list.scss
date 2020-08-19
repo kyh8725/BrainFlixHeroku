@@ -1,0 +1,76 @@
+.video-list {
+  margin: 2.5rem 1rem;
+  &__heading {
+    margin: 0;
+    margin-bottom: 2.5rem;
+    @include sub-header-m;
+    font-family: "avenir-demi";
+    color: $silver;
+  }
+  &__single {
+    margin: 1.5rem 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    //flex: 1;
+    &-img {
+      //flex: 0.44117;
+      // height: 21.875vw; // responsive
+      width: 120px;
+      height: 70px;
+      font-size: 0;
+      line-height: 0;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 4px;
+      }
+    }
+    &-info {
+      flex: 1;
+      margin-left: 1rem;
+      &-title {
+        margin: 0;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+        @include sub-header-m;
+        font-family: "avenir-demi";
+      }
+      &-channel {
+        margin: 0;
+        // in spec-doc it states 16px between channel name and title
+        // but the gap is too big. adjusted to .5 rem to more closely resemble mock up;
+        margin-top: 0.5rem;
+        @include paragraph-m;
+      }
+    }
+  }
+}
+
+@include tablet {
+  .video-list {
+    margin: 2.5rem 1.5rem;
+    width: 50%;
+    &__single {
+      &-img {
+        // flex: 0.3261;
+        img {
+          width: 100%;
+        }
+      }
+      &-info-title {
+        padding-right: 1.7rem;
+      }
+    }
+  }
+}
+
+@include desk {
+  .video-list {
+    width: 100%;
+  }
+}

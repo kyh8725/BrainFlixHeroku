@@ -1,0 +1,71 @@
+.comment {
+  display: flex;
+  border-bottom: 1px solid $mercury;
+  padding: 1rem;
+  * {
+    margin: 0;
+  }
+  &__left {
+    font-size: 0;
+    line-height: 0;
+    position: relative;
+    img {
+      position: relative;
+      transform: translateY(0.5rem);
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 50%;
+    }
+  }
+  &__right {
+    width: 100%;
+    padding-left: 1rem;
+    @include sub-header-m;
+
+    &-top {
+      display: flex;
+      justify-content: space-between;
+      @include sub-header;
+      padding-bottom: 0.5rem;
+      &-name {
+        font-size: 0.9rem;
+        font-family: "avenir-demi";
+      }
+      &-date {
+        font-family: "avenir";
+        font-size: 0.9rem;
+        color: $silver;
+      }
+    }
+  }
+  &__paragraph {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  &__paragraph-text {
+    flex: 0.95;
+    font-size: 0.875rem;
+  }
+}
+
+@include tablet {
+  .comment {
+    margin: 1rem 1.5rem 1rem 1.5rem;
+    padding: 0;
+    padding-bottom: 1rem;
+    &__right-top {
+      justify-content: flex-start;
+      &-name {
+        margin-right: 1rem;
+      }
+    }
+  }
+}
+
+@include desk {
+  .comment {
+    padding: 1rem 4rem 1rem 0;
+    margin: 0;
+  }
+}

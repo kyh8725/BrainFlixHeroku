@@ -1,0 +1,114 @@
+.video {
+  font-size: 0;
+  line-height: 0;
+  height: 57.1875vw;
+  &__playing {
+    object-fit: fill;
+    width: 100%;
+    height: 100%;
+  }
+  &__info {
+    margin: 2rem 1rem 0 1rem;
+    * {
+      margin: 0;
+    }
+  }
+  &__title {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-family: "avenir-bold";
+    margin-bottom: 1rem;
+  }
+  &__details {
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid $mercury;
+  }
+  &__channel-timestamp {
+    display: flex;
+    margin-bottom: 2rem;
+  }
+  &__views-likes {
+    display: flex;
+  }
+  &__channel {
+    font-family: "avenir-demi";
+  }
+  &__timestamp {
+    margin-left: 0.5rem;
+    color: $silver;
+  }
+  &__views-likes {
+    img {
+      margin-right: 0.5rem;
+    }
+  }
+  &__views {
+    display: flex;
+    align-content: center;
+  }
+  &__likes {
+    display: flex;
+    align-content: center;
+    margin-left: 2rem;
+  }
+  &__description {
+    @include labels-m;
+    font-size: 0.754rem;
+    margin-top: 1.5rem;
+  }
+}
+
+@include tablet {
+  .video {
+    height: 52.085vw;
+    padding: 0 2.125rem;
+    display: flex;
+    justify-content: center;
+    background-color: black;
+
+    &__info {
+      margin: 3rem 1.5rem 0 1.5rem;
+    }
+    &__title {
+      @include header;
+      margin-bottom: 1.5rem;
+    }
+    &__details {
+      display: flex;
+      justify-content: space-between;
+      * {
+        margin: 0;
+      }
+    }
+    &__timestamp {
+      margin-left: 0.5rem;
+    }
+    &__likes {
+      margin-left: 1.5rem;
+    }
+    &__description {
+      margin-top: 2.5rem;
+      width: 63%;
+    }
+  }
+}
+
+@include desk {
+  .video {
+    height: 37.5vw;
+    padding: 0 15.5rem;
+
+    &__info {
+      margin-left: 0;
+      margin-right: 0;
+    }
+    &__details {
+      padding-right: 2rem;
+    }
+    &__description {
+      @include sub-header-m;
+      width: 74%;
+      line-height: 1.5rem;
+    }
+  }
+}

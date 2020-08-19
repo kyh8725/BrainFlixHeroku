@@ -1,0 +1,27 @@
+@import "./_partials/typography";
+@import "./_partials/fonts";
+@import "./_partials/colors";
+@import "./_partials/breakpoints";
+@import "./_partials/header";
+@import "./_partials/button";
+@import "./_partials/comments";
+@import "./_partials/conversation";
+@import "./_partials/main-video";
+@import "./_partials/video-controls";
+@import "./_partials/video-list";
+@import "./_partials/desktop-view";
+@import "./_partials/upload";
+
+body {
+  font-family: "avenir";
+  box-sizing: border-box;
+  margin: 0;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+a {
+  text-decoration: none;
+}

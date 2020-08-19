@@ -1,0 +1,82 @@
+.header {
+  margin: 0.625rem 1rem 1rem 1rem;
+  text-align: center;
+
+  &__search {
+    width: 100%;
+    background-image: url("../assets/Icons/SVG/Icon-search.svg");
+    background-repeat: no-repeat;
+    background-position: 5% 50%;
+    background-color: $alabaster;
+    border: 1px solid $mercury;
+    border-radius: 4px;
+    height: 3rem;
+    padding: 0;
+    margin: 0.5625rem 0 0.625rem 0;
+    text-indent: 2.5rem;
+    &:active {
+      background-image: none;
+    }
+  }
+  &__upload-link {
+    width: 100%;
+    margin-right: 1rem;
+  }
+  &__bimg {
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+    &-button {
+      flex: 0.77777777;
+    }
+    &-img {
+      flex: 0.22222222;
+      display: flex;
+      justify-content: flex-end;
+      img {
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+@include tablet {
+  .header {
+    margin: 1rem 1.5rem;
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    align-items: center;
+
+    &__form {
+      display: flex;
+      width: 26.9375rem;
+      justify-content: space-between;
+    }
+    &__logo {
+      display: flex;
+      justify-content: flex-start;
+    }
+    &__search {
+      flex: 0.55;
+      margin: 0;
+    }
+    &__bimg {
+      flex: 0.45;
+      &-button {
+        margin-left: 1.5rem;
+      }
+      &-img {
+        margin-left: 1.5rem;
+      }
+    }
+  }
+}
+
+@include desk {
+  .header {
+    margin: 1rem 11.25rem;
+  }
+}
