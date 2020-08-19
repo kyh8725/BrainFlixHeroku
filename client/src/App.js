@@ -11,15 +11,13 @@ import axios from "axios";
 import "./styles/main.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-const $homeKey = "1af0jruup5gu";
-
 class App extends Component {
   state = {
     videoList: [],
     mainVideo: {},
     commentCount: 0,
     comments: [],
-    mainVideoId: $homeKey,
+    mainVideoId: "1af0jruup5gu",
   };
 
   componentDidMount() {
