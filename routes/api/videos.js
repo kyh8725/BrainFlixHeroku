@@ -5,7 +5,6 @@ const videoFile = __dirname + "/../../models/mainVideo.json";
 const videos = require(videoFile);
 
 router.get("/videos", (req, res) => {
-  console.log("video hit");
   const videoLists = videos.map((video) => {
     return {
       id: video.id,

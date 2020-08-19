@@ -23,6 +23,7 @@ class App extends Component {
   };
 
   componentDidMount() {
+    console.log("componentdidmount app");
     this.getVideoList();
     this.getMainVideo();
   }
@@ -34,24 +35,34 @@ class App extends Component {
   }
 
   getVideoList = () => {
-    axios.get("/videos").then((response) => {
-      this.setState({ videoList: response.data });
-    });
+    axios
+      .get("https://brainflixheroku.herokuapp.com/videos")
+      .then((response) => {
+        this.setState({ videoList: response.data });
+      });
   };
 
   getMainVideo = () => {
-    axios.get(`/videos/${this.state.mainVideoId}`).then((response) => {
-      const mainVideo = response.data[0];
-      this.setState({ mainVideo });
-      this.setState({ comments: mainVideo.comments });
-      this.setState({ commentCount: mainVideo.comments.length });
-    });
+    axios
+      .get(
+        `https://brainflixheroku.herokuapp.com/videos/${this.state.mainVideoId}`
+      )
+      .then((response) => {
+        const mainVideo = response.data[0];
+        this.setState({ mainVideo });
+        this.setState({ comments: mainVideo.comments });
+        this.setState({ commentCount: mainVideo.comments.length });
+      });
   };
 
   likesHandler = () => {
-    axios.put(`/videos/${this.state.mainVideoId}/likes`).then((response) => {
-      this.getMainVideo();
-    });
+    axios
+      .put(
+        `https://brainflixheroku.herokuapp.com/videos/${this.state.mainVideoId}/likes`
+      )
+      .then((response) => {
+        this.getMainVideo();
+      });
   };
 
   render() {
