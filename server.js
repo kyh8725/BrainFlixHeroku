@@ -3,8 +3,6 @@ const app = express();
 const cors = require("cors");
 app.use(cors());
 app.use(express.json());
-const videoRoute = require("./routes/api/videos");
-app.use("/", videoRoute);
 
 const path = require("path");
 if (process.env.NODE_ENV === "production") {
@@ -16,10 +14,13 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
+const videoRoute = require("./routes/api/videos");
+app.use("/", videoRoute);
+
 // //** MIDDLEWARE ** //
 // const whitelist = [
 //   "http://localhost:3000",
-//   "http://localhost:8000",
+//   "http://localhost:5000",
 //   "https://brainflixheroku.herokuapp.com/",
 // ];
 // const corsOptions = {
@@ -36,7 +37,7 @@ if (process.env.NODE_ENV === "production") {
 // };
 // app.use(cors(corsOptions));
 
-const port = 8000;
+const port = 5000;
 app.listen(port, () => {
   console.log(`server is running on port ${port}`);
 });
