@@ -1,0 +1,14 @@
+@include desk {
+  .desktop-view {
+    margin: 0 11.25rem;
+    display: flex;
+    flex: 1;
+    &__left {
+      flex: 0.659259;
+      border-right: 1px solid $mercury;
+    }
+    &__right {
+      flex: 0.340751;
+    }
+  }
+}

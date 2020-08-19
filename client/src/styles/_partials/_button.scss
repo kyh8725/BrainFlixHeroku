@@ -1,0 +1,32 @@
+button {
+  color: $white;
+  font-family: "avenir-demi";
+  @include sub-header-m;
+  background-color: $brainflix-blue;
+  border-radius: 4px;
+  border-style: hidden;
+  width: 100%;
+  height: 3rem;
+  margin: 0;
+  padding: 0;
+  &:hover {
+    background-color: $brainflix-blue-dark;
+  }
+}
+
+.comment__delete-button {
+  font-family: "avenir";
+  font-size: 0.5rem;
+  color: $white;
+  width: 2rem;
+  height: 1.5rem;
+  &:hover {
+    background-color: red;
+  }
+}
+
+@include tablet {
+  .comment__delete-button {
+    width: 3rem;
+  }
+}

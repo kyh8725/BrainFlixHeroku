@@ -1,0 +1,102 @@
+@mixin player {
+  height: 2rem;
+  border-radius: 0.2rem;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mainVideo-container {
+  position: relative;
+  margin: 0;
+}
+.control {
+  @include flexCenter;
+  padding: 0 1rem;
+  justify-content: space-between;
+  position: absolute;
+  width: 100%;
+  bottom: 5%;
+
+  &__playPause-button {
+    @include flexCenter;
+    @include player;
+    width: 4rem;
+    img {
+      height: 50%;
+    }
+  }
+  &__progressBar {
+    @include player;
+    @include flexCenter;
+    width: 100%;
+    margin-left: 0.5rem;
+  }
+  &__progress {
+    background-color: black;
+    width: 75%;
+    border-radius: 0.5rem;
+    height: 0.2rem;
+    display: inline-block;
+  }
+  &__time {
+    display: none;
+  }
+  &__volumeScreen {
+    width: 6rem;
+    @include player;
+    @include flexCenter;
+    justify-content: space-evenly;
+    margin-left: 0.5rem;
+  }
+  &__volume,
+  &__fullScreen {
+    @include flexCenter;
+    height: 2rem;
+    border-radius: 0.2rem;
+    background-color: rgba(0, 0, 0, 0);
+    img {
+      height: 50%;
+    }
+  }
+}
+
+@include tablet {
+  .control {
+    padding: 0 6.109%;
+    bottom: 4%;
+    &__progress {
+      display: flex;
+      width: 100%;
+      margin-left: 1rem;
+    }
+    &__progressBar {
+      margin-left: 1rem;
+      justify-content: space-between;
+    }
+    &__time {
+      margin-left: 1rem;
+      margin-right: 1rem;
+      display: inline;
+      color: white;
+    }
+    &__volumeScreen {
+      margin-left: 1rem;
+    }
+  }
+}
+
+@include desk {
+  .control {
+    padding: 0 18.25%;
+    bottom: 3%;
+    &__progressBar {
+      margin-left: 1rem;
+    }
+    &__volumeScreen {
+      margin-left: 1rem;
+    }
+  }
+}
