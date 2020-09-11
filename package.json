@@ -4,10 +4,9 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "npm start --prefix client",
+    "start": "npm start --prefix server",
     "server": "nodemon index --prefix server",
     "build": "react-scripts build",
-    "postbuild": "npm start --prefix server",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "heroku-postbuild": "npm install --prefix client && npm install --prefix server && npm run build --prefix client"
   },
