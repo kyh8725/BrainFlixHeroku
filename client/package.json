@@ -1,6 +1,6 @@
 {
   "proxy": "https://brainflixx.herokuapp.com/",
-  "name": "sprint3",
+  "name": "brainflix",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

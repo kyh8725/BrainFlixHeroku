@@ -2,10 +2,10 @@
   "name": "brainflixheroku",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "client": "npm run startT --prefix client",
-    "start": "node server",
+    "client": "npm start --prefix client",
+    "start": "npm start --prefix server",
     "server": "nodemon index --prefix server",
     "build": "react-scripts build",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
