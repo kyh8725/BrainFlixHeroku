@@ -9,7 +9,7 @@
     "server": "nodemon index --prefix server",
     "build": "react-scripts build",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild": "npm install --prefix client && npm install --prefix server && npm run build --prefix client"
+    "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "repository": {
     "type": "git",
