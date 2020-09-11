@@ -1,5 +1,5 @@
 {
-  "proxy": "http://localhost:5000",
+  "proxy": "https://brainflixx.herokuapp.com/",
   "name": "sprint3",
   "version": "0.1.0",
   "private": true,
