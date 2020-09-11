@@ -7,9 +7,10 @@
     "client": "npm run client --prefix ../client",
     "client-install": "npm install --prefix client",
     "start": "node server.js",
-    "server": "nodemon server.js",
+    "server": "node server.js",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm install --prefix server && npm run build --prefix client"
   },
   "keywords": [],
   "author": "Daniel",
@@ -22,7 +23,7 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "^3.4.1",
+    "react-scripts": "3.4.3",
     "uuid": "^7.0.3"
   }
 }
