@@ -1,0 +1,24 @@
+{
+  "name": "brainflixheroku",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "client": "npm start --prefix client",
+    "start": "npm start --prefix server",
+    "server": "nodemon index --prefix server",
+    "build": "react-scripts build",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm install --prefix server && npm run build --prefix client"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kyh8725/BrainFlixHeroku.git"
+  },
+  "author": "Daniel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kyh8725/BrainFlixHeroku/issues"
+  },
+  "homepage": "https://github.com/kyh8725/BrainFlixHeroku#readme"
+}
