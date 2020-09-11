@@ -14,7 +14,7 @@ export default function upload(props) {
       const description = event.target.videoDesc.value;
       if (title !== "" && description !== "") {
         axios
-          .post(`/videos/`, {
+          .post(`https://frozen-fjord-12948.herokuapp.com/videos/`, {
             title: title,
             description: description,
             image: uploadImage,

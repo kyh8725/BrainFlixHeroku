@@ -3,15 +3,18 @@ import faceImage from "../assets/Images/face.png";
 import axios from "axios";
 
 export default function conversation(props) {
-  const commentHandler = event => {
+  const commentHandler = (event) => {
     event.preventDefault();
     const comments = event.target.commentInput.value;
     if (comments !== "") {
       axios
-        .post(`/comments/${props.mainVideoId}`, {
-          comment: comments
-        })
-        .then(response => {
+        .post(
+          `https://frozen-fjord-12948.herokuapp.com/comments/${props.mainVideoId}`,
+          {
+            comment: comments,
+          }
+        )
+        .then((response) => {
           props.getMainVideo();
         });
       event.target.reset();

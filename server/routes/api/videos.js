@@ -73,7 +73,24 @@ router.put("/videos/:videoId/likes", (req, res) => {
         video.likes = (Number(video.likes) + 1).toLocaleString();
       } else {
         video.likes = (
-          Number(video.likes.replace(",", "")) + 1
+          Number(video.likes.replace(/,/g, "")) + 1
+        ).toLocaleString();
+      }
+
+      helper.writeJSONFile(videoFile, videos);
+      res.json(videos);
+    }
+  });
+});
+
+router.put("/videos/:videoId/views", (req, res) => {
+  videos.map((video) => {
+    if (video.id === req.params.videoId) {
+      if (Number(video.views) < 1000) {
+        video.views = (Number(video.views) + 1).toLocaleString();
+      } else {
+        video.views = (
+          Number(video.views.replace(/,/g, "")) + 1
         ).toLocaleString();
       }
 

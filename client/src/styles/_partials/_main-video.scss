@@ -50,6 +50,13 @@
     display: flex;
     align-content: center;
     margin-left: 2rem;
+    img {
+      opacity: 0.8;
+      &:hover {
+        cursor: pointer;
+        opacity: 1;
+      }
+    }
   }
   &__description {
     @include labels-m;

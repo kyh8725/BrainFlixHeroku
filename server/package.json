@@ -1,0 +1,26 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix ../client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "keywords": [],
+  "author": "Daniel",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  },
+  "dependencies": {
+    "concurrently": "^5.3.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "^3.4.1",
+    "uuid": "^7.0.3"
+  }
+}

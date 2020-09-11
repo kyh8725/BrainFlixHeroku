@@ -499,6 +499,15 @@ button:hover {
   margin-left: 2rem;
 }
 
+.video__likes img {
+  opacity: 0.8;
+}
+
+.video__likes img:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+
 .video__description {
   font-size: 12px;
   line-height: 20px;
