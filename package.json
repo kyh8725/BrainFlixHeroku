@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "client": "npm start --prefix client",
+    "client": "npm run startT --prefix client",
     "start": "npm start --prefix client",
     "server": "nodemon index --prefix server",
     "build": "react-scripts build",
