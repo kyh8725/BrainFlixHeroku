@@ -4,12 +4,12 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "client": "npm run client --prefix client",
-    "start": "concurrently \"npm run server --prefix server\" \"npm run client\"",
+    "start": "npm start --prefix client",
     "server": "nodemon index --prefix server",
     "build": "react-scripts build",
+    "postbuild": "npm start --prefix server",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild": "cd client && npm install && npm run build"
+    "heroku-postbuild": "npm install --prefix client && npm install --prefix server && npm run build --prefix client"
   },
   "repository": {
     "type": "git",
