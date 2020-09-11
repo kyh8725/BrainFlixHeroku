@@ -8,12 +8,9 @@ export default function conversation(props) {
     const comments = event.target.commentInput.value;
     if (comments !== "") {
       axios
-        .post(
-          `https://frozen-fjord-12948.herokuapp.com/comments/${props.mainVideoId}`,
-          {
-            comment: comments,
-          }
-        )
+        .post(`/comments/${props.mainVideoId}`, {
+          comment: comments,
+        })
         .then((response) => {
           props.getMainVideo();
         });
